@@ -1,12 +1,7 @@
 function solution(s){
-    let countP = 0;
-    let countY = 0;
-    
-    for(let el of s) {
-        if(el === "p" || el === "P") countP++;
-        if(el === "y" || el === "Y") countY++;
-    }
-    
-    // if(countP === 0 && countY === 0) return true;
-    return countP === countY ? true : false;
+    return s.split("").reduce((acc, cur) => {
+        if(cur === "p" || cur === "P") return acc += 1;
+        else if(cur === "y" || cur === "Y") return acc -= 1;
+        return acc;
+    }, 0) === 0 ? true : false;
 }
