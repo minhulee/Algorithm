@@ -1,6 +1,3 @@
 function solution(s) {
-    return s.split(" ").map(el => {
-        console.log(el);
-        return `${el[0].toUpperCase()}${el.slice(1).toLowerCase()}`;
-    }).join(" ");
+    return s.toLowerCase().split(" ").map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(" ");
 }
