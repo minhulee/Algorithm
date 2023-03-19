@@ -1,8 +1,7 @@
 function solution(n) {
-    const search = (n) => `${n.toString(2)}`.split("").filter(el => el === "1").length - 1;
-    const count = search(n);
+    const count = n.toString(2).match(/1/g).length
     
     while(n++) {
-        if(count === search(n)) return n;
+        if(count === n.toString(2).match(/1/g).length) return n;
     }
 }
