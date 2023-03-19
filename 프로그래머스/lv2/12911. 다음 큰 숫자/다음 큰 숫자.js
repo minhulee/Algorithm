@@ -1,16 +1,11 @@
 function solution(n) {
-  let answer = 0;
-
-  function findNum(origin, nextNum) {
-    const len = nextNum.toString(2).match(/1/g).length;
-
-    if (origin === len) answer = nextNum;
-    else findNum(origin, nextNum + 1);
-  }
-
-  const num = n.toString(2).match(/1/g).length;
-
-  findNum(num, n + 1);
-
-  return answer;
+    const count = `${n.toString(2)}`.split("").filter(el => el === "1").length - 1;
+    let answer = n + 1;
+    
+    while(true) {
+        const count2 = `${answer.toString(2)}`.split("").filter(el => el === "1").length - 1;
+        if(count === count2) return answer;
+        
+        answer++;
+    }
 }
