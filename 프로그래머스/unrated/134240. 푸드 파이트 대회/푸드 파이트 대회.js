@@ -1,14 +1,9 @@
 function solution(food) {
-    let result = [0];
+    let result = '';
     
-    food.reverse().forEach((quantity, idx) => {
-        const calorie = food.length - (idx + 1);
-        
-        while(quantity >= 2) {
-            result = [calorie, ...result, calorie];
-            quantity -= 2;
-        }
-    })
-    
-    return result.join('');
+    for (let i = 1; i < food.length; i++) {
+        result += i.toString().repeat(Math.floor(food[i]/2));
+    }
+
+    return result + '0' + [...result].reverse().join('');
 }
