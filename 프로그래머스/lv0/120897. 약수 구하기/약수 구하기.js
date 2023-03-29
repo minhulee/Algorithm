@@ -1,9 +1,3 @@
 function solution(n) {
-    const answer = [1];
-    
-    for(let i = 2; i <= n; i++) {
-        if(n % i === 0) answer.push(i);
-    }
-    
-    return answer;
+    return Array(n).fill(0).map((v, index) => v+index+1).filter((v) => n%v===0);
 }
