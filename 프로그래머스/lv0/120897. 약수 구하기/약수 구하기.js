@@ -1,3 +1,3 @@
 function solution(n) {
-    return Array(n).fill(0).map((v, index) => v+index+1).filter((v) => n%v===0);
+    return new Array(n).fill(0).map((el, idx) => el + idx + 1).filter((el) => n % el === 0);
 }
