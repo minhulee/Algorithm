@@ -13,11 +13,11 @@ function solution(s) {
     
 //     return result;
     
-    const hash = {};
+    const map = {};
 
-    return [...s].map((v,i)=>{
-        let result = hash[v] !== undefined ? i - hash[v] : -1;
-        hash[v] = i;
+    return [...s].map((v, i) => {
+        let result = map[v] !== undefined ? i - map[v] : -1;
+        map[v] = i;
         
         return result;
     });
