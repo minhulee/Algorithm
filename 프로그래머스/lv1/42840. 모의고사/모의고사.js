@@ -15,8 +15,8 @@ function solution(answers) {
     // 카운트한 정답 수를 통해 결과 도출
     const max = Math.max(...count);
     
-    for (let j = 0; j < count.length; j++) {
-        if (count[j] === max) answer.push(j + 1);
+    for (let i = 0; i < count.length; i++) {
+        if (count[i] === max) answer.push(i + 1);
     }
     
     return answer;
