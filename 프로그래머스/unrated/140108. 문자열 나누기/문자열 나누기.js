@@ -1,6 +1,6 @@
 function solution(s) {
-    let x = null;
     let counter = 0;
+    let x = null;
     let isX = 0;
     let notX = 0;
     
@@ -8,9 +8,9 @@ function solution(s) {
         if(x === null) {
             x = s[i];
             isX++;
-        }
-        else if (x !== s[i]) notX++;
-        else {
+        } else if (x !== s[i]) {
+            notX++;
+        } else {
             isX++;
         }
         
