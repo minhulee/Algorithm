@@ -1,9 +1,10 @@
 function solution(binomial) {
-    const [a, op, b] = binomial.split(' ')
-    const operator = {
-        '+': (a,b)=>a+b,
-        '-': (a,b)=>a-b,
-        '*': (a,b)=>a*b
+    const [a, op, b] = binomial.split(' ');
+    
+    switch(op) {
+        case '+' : return a*1 + b*1;
+        case '-' : return a*1 - b*1;
+        case '*' : return a*1 * b*1;
+        case '/' : return a*1 / b*1;
     }
-    return operator[op](Number(a),Number(b))
 }
