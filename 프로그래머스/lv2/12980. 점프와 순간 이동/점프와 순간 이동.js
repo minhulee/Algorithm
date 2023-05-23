@@ -5,7 +5,7 @@ function solution(n, c=0)
     // else return solution(n-1, c+1);
     
     while(n > 0) {
-        if(n % 2 === 0) n = n/2;
+        if(n % 2 === 0) n /= 2;
         else {
             c++;
             n -= 1;
