@@ -1,3 +1,1 @@
-function solution(myString) {
-    return [...myString].map(e => e < 'l' ? 'l' : e).join('');
-}
+const solution = (myString) => [...myString].map(e => e < 'l' ? 'l' : e).join('');
