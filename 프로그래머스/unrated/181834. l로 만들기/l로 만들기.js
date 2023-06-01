@@ -1,3 +1,3 @@
 function solution(myString) {
-    return myString.split('').map(e => e.charCodeAt() < 108 ? 'l' : e).join('');
+    return [...myString].map(e => e < 'l' ? 'l' : e).join('');
 }
