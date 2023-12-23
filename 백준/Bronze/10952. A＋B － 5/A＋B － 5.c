@@ -4,12 +4,7 @@ int main(void)
 {
     int a, b;
     
-    while(1)
-    {
-        scanf("%d %d", &a, &b);
-        if (!a && !b)
-            break ;
+    while(scanf("%d %d", &a, &b) && (a && b))
         printf("%d\n", a + b);
-    }
     return (0);
 }
