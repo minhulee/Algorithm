@@ -2,12 +2,9 @@
 
 int main(void)
 {
-    char s[100 * 100] = "";
-	int i = 0, res = 0;
+    char c;
     
-    while ((res = scanf("%c", &s[i])) == 1)
-		i++;
-	s[i] = '\0';
-	printf("%s", s);
+    while (scanf("%c", &c) != EOF)
+        printf("%c", c);
     return (0);
 }
