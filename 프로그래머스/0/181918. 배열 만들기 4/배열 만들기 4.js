@@ -1,18 +1,10 @@
 function solution(arr) {
     return arr.reduce((acc, e) => {
-        while (1)
-        {
-            if (acc[acc.length - 1] >= e)
-                acc.pop();
-            else
-                break ;
-        }
+        let count = 0;
+        while (acc.length > 0 && acc[acc.length - 1 - count] >= e)
+            count++;
+        acc = acc.slice(0, acc.length - count);
         acc.push(e);
         return acc;
     }, []);
 }
-
-// 3
-// 3 4
-// 3 4 5
-// 
