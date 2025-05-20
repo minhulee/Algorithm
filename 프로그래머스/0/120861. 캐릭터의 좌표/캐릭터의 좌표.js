@@ -13,14 +13,13 @@ function solution(keyinput, board) {
     
     // 입력값 실행
     keyinput.forEach((key) => {
-        // key to cmd
+        // 명령어 파싱 및 이동 결과 계산
         let [ dir, dis ] = cmd[key];
+        let next = answer[dir] + dis;
         
-        // 방향과 거리에 따른 명령어 무시 적용
-        if (dis < 0 && answer[dir] > range[dir] * dis)
-            answer[dir] += dis;
-        else if (dis > 0 && answer[dir] < range[dir] * dis)
-            answer[dir] += dis;
+        // 이동 결과가 범위를 벗어나지 않는지 확인
+        if (Math.abs(next) <= range[dir])
+            answer[dir] = next;
     })
     
     return (answer);
