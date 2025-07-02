@@ -11,17 +11,16 @@ function solution(id_list, report, k) {
     report.forEach((r) => {
       const [reporter, target] = r.split(' ');
         const idx = nameMap[target];
-        if (list[idx].indexOf(reporter) < 0)
+        if (list[idx].includes(reporter) === false)
             list[idx].push(reporter);  
     })
     
     // 유효한 신고 구별 후 결과 메일 도출
-    list.map((e) => e.length >= k ? e : []).forEach((reporters) => {
-        reporters.forEach((n) => {
-            const idx = nameMap[n];
-            answer[idx] += 1;
-        })
-    })
+    // map에 의한 불필요한 배열 복사 제거
+    list.forEach((reporters) => {
+        if (reporters.length >= k)
+            reporters.forEach((n) => answer[nameMap[n]] += 1);
+});
     
     return answer;
 }
